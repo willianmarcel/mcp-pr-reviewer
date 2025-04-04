@@ -101,6 +101,3 @@ Contribuições são bem-vindas! Por favor, sinta-se à vontade para submeter PR
 
 Se você encontrar algum problema ou tiver sugestões, por favor abra uma issue no repositório.
 
----
-
-Desenvolvido com ❤️ pela equipe Avanade
