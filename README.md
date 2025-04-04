@@ -15,7 +15,7 @@ Um assistente inteligente para análise de Pull Requests que integra GitHub com 
 ### Pré-requisitos
 
 - Python 3.8 ou superior
-- Conta no GitHub
+- Conta no GitHub com token de acesso
 - Conta no Notion com permissões de API
 - Tokens de acesso configurados
 
@@ -53,22 +53,35 @@ GITHUB_TOKEN=seu_token_do_github
 Para iniciar o analisador de PRs:
 
 ```bash
-python main.py
+python pr_analyzer.py
 ```
 
 O serviço irá:
-1. Conectar-se à API do GitHub
-2. Monitorar PRs especificados
-3. Realizar análise automática
-4. Gerar documentação no Notion
+1. Inicializar o servidor MCP para análise de PRs
+2. Estabelecer conexão com a API do GitHub
+3. Configurar a integração com o Notion
+4. Aguardar solicitações de análise de PRs
+5. Gerar documentação automaticamente no Notion
 
 ## 🛠️ Arquitetura
 
-O projeto é estruturado em três componentes principais:
+O projeto é estruturado em dois componentes principais:
 
-- `main.py`: Ponto de entrada da aplicação
-- `pr_analyzer.py`: Core da análise de PRs
-- `github_integration.py`: Integração com a API do GitHub
+- `pr_analyzer.py`: Core da aplicação que gerencia o servidor MCP e coordena as análises
+- `github_integration.py`: Módulo responsável pela integração com a API do GitHub
+
+### Componentes
+
+#### PR Analyzer
+- Inicializa o servidor FastMCP
+- Gerencia a integração com o Notion
+- Registra ferramentas para análise de PRs
+- Processa as solicitações de análise
+
+#### GitHub Integration
+- Gerencia a comunicação com a API do GitHub
+- Recupera informações de Pull Requests
+- Processa mudanças de código
 
 ## 📝 Licença
 
